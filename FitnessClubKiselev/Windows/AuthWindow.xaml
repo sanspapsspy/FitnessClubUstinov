@@ -1,0 +1,66 @@
+﻿<Window x:Class="FitnessClubKiselev.Windows.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessClubKiselev.Windows"
+        mc:Ignorable="d"
+        Title="AuthWindow" Height="600" Width="400">
+    <Grid>
+        <StackPanel>
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9BFBC2" Offset="0"/>
+                    <GradientStop Color="#FF3CD6C8" Offset="0.632"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <TextBlock Text="Авторизация"
+                       HorizontalAlignment="Center"
+                       FontSize="24"
+                       Margin="0 20 0 0" 
+                       FontWeight="DemiBold" 
+                       Foreground="#FF0D3F44"/>
+            <TextBlock Text="Логин"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 50 0 0"
+                       Foreground="#FF0D3F44"/>
+            <TextBox x:Name="TbLogin"
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     Margin="20 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+            <TextBlock Text="Пароль"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 50 0 0"
+                       Foreground="#FF0D3F44"/>
+            <TextBox x:Name="TbPassword"
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     Margin="20 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+            <Button x:Name="BtnSignIn"
+                    Content="Войти"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Margin="0 200 0 0"
+                    Width="200" 
+                    Background="#FF60B9E2" 
+                    BorderBrush="#FF2A6A67" 
+                    Foreground="#FF0D3F44" Click="BtnSignIn_Click"/>
+            <TextBlock Text="Регистрация"
+                       HorizontalAlignment="Center"
+                       FontSize="16"
+                       Margin="0 40 0 0" 
+                       Cursor="Hand"
+                       Foreground="#FF0D3F44"/>
+        </StackPanel>
+    </Grid>
+</Window>

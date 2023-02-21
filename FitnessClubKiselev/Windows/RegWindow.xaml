@@ -1,0 +1,161 @@
+﻿<Window x:Class="FitnessClubKiselev.Windows.RegWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessClubKiselev.Windows"
+        mc:Ignorable="d"
+        Title="RegWindow" Height="600" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <ScrollViewer>
+        
+    
+    <Grid>
+        <StackPanel>
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9BFBC2" Offset="0"/>
+                    <GradientStop Color="#FF3CD6C8" Offset="0.632"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            
+            <TextBlock Text="Добавление клиента"
+                       HorizontalAlignment="Center"
+                       FontSize="24"
+                       Margin="0 20 0 0" 
+                       FontWeight="DemiBold" 
+                       Foreground="#FF0D3F44"/>
+            <TextBlock Text="Имя"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 50 0 0"
+                       Foreground="#FF0D3F44"/>
+            <TextBox x:Name="TbFName"
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     Margin="20 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+            <TextBlock Text="Фамилия"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 20 0 0"
+                       Foreground="#FF0D3F44"/>
+            <TextBox x:Name="TbLName"
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     Margin="20 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+            <TextBlock Text="Отчество (необязательно)"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 20 0 0"
+                       Foreground="#FF0D3F44"/>
+            <TextBox x:Name="TbPatronymic"
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     Margin="20 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+            <TextBlock Text="Почта"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 20 0 0"
+                       Foreground="#FF0D3F44"/>
+            <TextBox x:Name="TbEmail"
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     Margin="20 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+            <TextBlock Text="Телефон"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 20 0 0"
+                       Foreground="#FF0D3F44"/>
+            <TextBox x:Name="TbPhone"
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     Margin="20 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+                <TextBlock Text="Серия паспорта"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 20 0 0"
+                       Foreground="#FF0D3F44"/>
+                <TextBox x:Name="TbSeriesPass"
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     Margin="20 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+                <TextBlock Text="Номер паспорта"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 20 0 0"
+                       Foreground="#FF0D3F44"/>
+                <TextBox x:Name="TbNumberPass"
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     Margin="20 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+                <TextBlock Text="Дата рождения"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 20 0 0"
+                       Foreground="#FF0D3F44"/>
+                <DatePicker x:Name="DPbDateOfBirth"
+                     HorizontalAlignment="Left"
+                     FontSize="16"
+                     Margin="20 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+                <TextBlock Text="Ваш пол"
+                       HorizontalAlignment="Left"
+                       FontSize="16"
+                       Margin="20 20 0 0"
+                       Foreground="#FF0D3F44"/>
+            <ComboBox x:Name="CMBGender"
+                      HorizontalAlignment="Left"
+                      FontSize="16"
+                      Margin="20 5 0 0"
+                      Width="200" 
+                      Background="#FFBCFFFF" 
+                      BorderBrush="{x:Null}"
+                      Foreground="#FF0D3F44"/>
+            
+            
+            
+            <Button x:Name="BtnReg"
+                    Content="Зарегистрироваться"
+                    HorizontalAlignment="Center"
+                    FontSize="16"
+                    Margin="0 80 0 20"
+                    Width="200" 
+                    Background="#FF60B9E2" 
+                    BorderBrush="#FF2A6A67" 
+                    Foreground="#FF0D3F44"
+                    Click="BtnReg_Click"/>
+        </StackPanel>
+    </Grid>
+    </ScrollViewer>
+</Window>
