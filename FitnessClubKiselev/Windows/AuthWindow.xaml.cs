@@ -26,7 +26,11 @@ namespace FitnessClubKiselev.Windows
 
         private void BtnSignIn_Click(object sender, RoutedEventArgs e)
         {
+            // Авторизация
+            
+            // Получиили список пользователей
             var authUser = ClassHelper.EFClass.context.User.ToList()
+                // Выбрали пользователя по условию
                 .Where(i => i.Login == TbLogin.Text && i.Password == TbPassword.Text).FirstOrDefault();
 
             if(authUser != null)
@@ -37,8 +41,16 @@ namespace FitnessClubKiselev.Windows
             }
             else
             {
-                MessageBox.Show("Нерпвильно введён логин или пароль");
+                MessageBox.Show("Неравильно введён логин или пароль");
             }
+        }
+
+        private void TextBlock_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+
+            // Открытие окна регистрации
+            RegWindow regWindow = new RegWindow();
+            regWindow.ShowDialog();
         }
     }
 }

@@ -1,11 +1,11 @@
-﻿<Window x:Class="FitnessClubKiselev.Windows.AddEditService"
+﻿<Window x:Class="FitnessClubKiselev.Windows.AddEditServiceWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClubKiselev.Windows"
         mc:Ignorable="d"
-        Title="AddEditService" Height="750" Width="400">
+        Title="AddEditService" Height="850" Width="400">
     <Grid>
         <StackPanel>
             <StackPanel.Background>
@@ -14,7 +14,8 @@
                     <GradientStop Color="#FF3CD6C8" Offset="0.632"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <TextBlock Text="Добавление услуги"
+            <TextBlock x:Name="TbTitleService"
+                       Text="Добавление услуги"
                        HorizontalAlignment="Center"
                        FontSize="24"
                        Margin="0 20 0 0" 
@@ -58,6 +59,19 @@
                        Margin="0 50 0 0"
                        Foreground="#FF0D3F44"/>
             <TextBox x:Name="TbPrice"
+                     HorizontalAlignment="Center"
+                     FontSize="16"
+                     Margin="0 5 0 0"
+                     Width="200" 
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"/>
+            <TextBlock Text="Продолжительность(в минутах)"
+                       HorizontalAlignment="Center"
+                       FontSize="16"
+                       Margin="0 50 0 0"
+                       Foreground="#FF0D3F44"/>
+            <TextBox x:Name="TbDuration"
                      HorizontalAlignment="Center"
                      FontSize="16"
                      Margin="0 5 0 0"

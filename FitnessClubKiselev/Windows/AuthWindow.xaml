@@ -60,7 +60,7 @@
                        FontSize="16"
                        Margin="0 40 0 0" 
                        Cursor="Hand"
-                       Foreground="#FF0D3F44"/>
+                       Foreground="#FF0D3F44" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp"/>
         </StackPanel>
     </Grid>
 </Window>

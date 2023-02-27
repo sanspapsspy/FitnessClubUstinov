@@ -73,7 +73,8 @@
                                     FontSize="18"
                                     Width="150"
                                     Height="30"
-                                    Margin="10"/>
+                                    Margin="10"
+                                    Click="BtnEditProduct_Click"/>
                         </StackPanel>
                     </Border>
                 </DataTemplate>
@@ -87,6 +88,7 @@
                 Height="40"
                 FontSize="22"
                 HorizontalAlignment="Right"
-                Margin="20 0"/>
+                Margin="20 0"
+                Click="BtnAddService_Click"/>
     </Grid>
 </Window>

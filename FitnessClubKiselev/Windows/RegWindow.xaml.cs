@@ -31,6 +31,8 @@ namespace FitnessClubKiselev.Windows
 
         private void BtnReg_Click(object sender, RoutedEventArgs e)
         {
+
+            // Добавление клиента
             Client client = new Client();
 
             client.LName = TbLName.Text;
@@ -46,6 +48,8 @@ namespace FitnessClubKiselev.Windows
             ClassHelper.EFClass.context.Client.Add(client);
 
             ClassHelper.EFClass.context.SaveChanges();
+
+            // Закрытие окна
             this.Close();
         }
     }

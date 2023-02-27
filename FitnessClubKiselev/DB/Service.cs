@@ -16,6 +16,7 @@ namespace FitnessClubKiselev.DB
     {
         public int Id { get; set; }
         public string NameService { get; set; }
+        public Nullable<int> Duration { get; set; }
         public decimal Price { get; set; }
         public byte[] Photo { get; set; }
         public string Description { get; set; }

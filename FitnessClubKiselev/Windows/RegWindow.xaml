@@ -143,8 +143,6 @@
                       BorderBrush="{x:Null}"
                       Foreground="#FF0D3F44"/>
             
-            
-            
             <Button x:Name="BtnReg"
                     Content="Зарегистрироваться"
                     HorizontalAlignment="Center"

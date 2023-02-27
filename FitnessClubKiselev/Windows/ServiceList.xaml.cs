@@ -37,5 +37,35 @@ namespace FitnessClubKiselev.Windows
             lvService.ItemsSource = serviceList;
         }
 
+        private void BtnEditProduct_Click(object sender, RoutedEventArgs e)
+        {
+            // Изменение услуги
+
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+
+            var service = button.DataContext as Service;
+
+            // Открытие окна изменения услуги 
+            AddEditServiceWindow addEditServiceWindow = new AddEditServiceWindow(service);
+            addEditServiceWindow.ShowDialog();
+
+            // Обновить список
+            GetServiceList();
+        }
+
+        private void BtnAddService_Click(object sender, RoutedEventArgs e)
+        {
+
+            // Открытие окна добавление услуги
+            AddEditServiceWindow addEditServiceWindow = new AddEditServiceWindow();
+            addEditServiceWindow.ShowDialog();
+
+            // Обновить список
+            GetServiceList();
+        }
     }
 }
