@@ -45,6 +45,12 @@
                             Height="280"
                             Margin="8">
                         <StackPanel>
+                            <StackPanel.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF9BFBC2" Offset="0"/>
+                                    <GradientStop Color="#FF3CD6C8" Offset="0.632"/>
+                                </LinearGradientBrush>
+                            </StackPanel.Background>
                             <Image x:Name="ServiceImage"
                                    Height="150"
                                    Width="190">
@@ -74,6 +80,9 @@
                                     Width="150"
                                     Height="30"
                                     Margin="10"
+                                    Background="#FF60B9E2" 
+                                    BorderBrush="#FF2A6A67" 
+                                    Foreground="#FF0D3F44"
                                     Click="BtnEditProduct_Click"/>
                         </StackPanel>
                     </Border>
@@ -86,9 +95,12 @@
                 Grid.Row="3"
                 Width="250"
                 Height="40"
-                FontSize="22"
+                FontSize="20"
                 HorizontalAlignment="Right"
                 Margin="20 0"
+                Background="#FF60B9E2" 
+                BorderBrush="#FF2A6A67" 
+                Foreground="#FF0D3F44"
                 Click="BtnAddService_Click"/>
     </Grid>
 </Window>
