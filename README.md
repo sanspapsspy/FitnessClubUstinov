@@ -22,7 +22,7 @@
 ![image](https://user-images.githubusercontent.com/116631267/221531773-53beb6e1-4984-4c24-a4da-7a443cd53777.png)
 
 <b>Добавление услуги</b>
-![image](https://user-images.githubusercontent.com/116631267/221531981-7a5813f7-3d3c-4aaa-b1ae-1a87580e63b4.png)
+![image](https://user-images.githubusercontent.com/116631267/222432842-34b0f581-c942-4053-9d70-23269cf683cd.png)
 
 <b>БД</b>
 ![image](https://user-images.githubusercontent.com/116631267/221530907-59488756-6c61-41c5-927b-588b0cd3ba6f.png)
