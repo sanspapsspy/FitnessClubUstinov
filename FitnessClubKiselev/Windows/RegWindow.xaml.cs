@@ -32,6 +32,51 @@ namespace FitnessClubKiselev.Windows
         private void BtnReg_Click(object sender, RoutedEventArgs e)
         {
 
+            // Валидация
+
+            if (string.IsNullOrWhiteSpace(TbFName.Text))
+            {
+                MessageBox.Show("Вы не заполнили Имя.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TbLName.Text))
+            {
+                MessageBox.Show("Вы не заполнили Фамилию.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TbPhone.Text))
+            {
+                MessageBox.Show("Вы не заполнили Телефон.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TbNumberPass.Text))
+            {
+                MessageBox.Show("Вы не заполнили Номер паспорта.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TbSeriesPass.Text))
+            {
+                MessageBox.Show("Вы не заполнили Серию паспорта.");
+                return;
+            }
+
+            if (TbSeriesPass.Text.Length < 4 || TbSeriesPass.Text.Length > 4)
+            {
+                MessageBox.Show("Серия паспорта должна состоять из 4 цифр.");
+                return;
+            }
+
+            if (TbNumberPass.Text.Length < 6 || TbNumberPass.Text.Length > 6)
+            {
+                MessageBox.Show("Номер паспорта должна состоять из 6 цифр.");
+                return;
+            }
+
+
             // Добавление клиента
             Client client = new Client();
 

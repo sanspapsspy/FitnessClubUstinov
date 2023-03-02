@@ -86,6 +86,25 @@ namespace FitnessClubKiselev.Windows
         {
 
             // Валидация
+
+            if (string.IsNullOrWhiteSpace(TbNameService.Text))
+            {
+                MessageBox.Show("Вы не заполнили Наименование услуги.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TbPrice.Text))
+            {
+                MessageBox.Show("Вы не заполнили Цену услуги.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TbDuration.Text))
+            {
+                MessageBox.Show("Вы не заполнили Продолжительность услуги.");
+                return;
+            }
+
             if (isEdit == true)
             {
                 // Изменение услуги

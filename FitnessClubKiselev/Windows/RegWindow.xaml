@@ -64,7 +64,7 @@
                      Background="#FFBCFFFF" 
                      BorderBrush="{x:Null}"
                      Foreground="#FF0D3F44"/>
-            <TextBlock Text="Почта"
+            <TextBlock Text="Почта (необязательно)"
                        HorizontalAlignment="Left"
                        FontSize="16"
                        Margin="20 20 0 0"
@@ -144,7 +144,7 @@
                       Foreground="#FF0D3F44"/>
             
             <Button x:Name="BtnReg"
-                    Content="Зарегистрироваться"
+                    Content="Добавить клиента"
                     HorizontalAlignment="Center"
                     FontSize="16"
                     Margin="0 80 0 20"
