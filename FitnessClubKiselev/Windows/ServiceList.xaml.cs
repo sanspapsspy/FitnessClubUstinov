@@ -26,6 +26,7 @@ namespace FitnessClubKiselev.Windows
         {
             InitializeComponent();
             GetServiceList();
+            CMBTypeSearch.SelectedIndex = 0;
         }
 
         private void GetServiceList()
@@ -34,7 +35,21 @@ namespace FitnessClubKiselev.Windows
 
             serviceList = EFClass.context.Service.ToList();
 
-            lvService.ItemsSource = serviceList;
+            if (CMBTypeSearch.SelectedIndex == 0)
+            {
+                serviceList = serviceList.Where(z => z.NameService.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
+            }
+            else if (CMBTypeSearch.SelectedIndex == 1)
+            {
+                serviceList = serviceList.Where(z => z.Price.ToString().Contains(TbSearch.Text)).ToList();
+            }
+            else if (CMBTypeSearch.SelectedIndex == 2)
+            {
+                serviceList = serviceList.Where(z => z.Description.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
+            }
+
+                lvService.ItemsSource = serviceList;
+
         }
 
         private void BtnEditProduct_Click(object sender, RoutedEventArgs e)
@@ -65,6 +80,11 @@ namespace FitnessClubKiselev.Windows
             addEditServiceWindow.ShowDialog();
 
             // Обновить список
+            GetServiceList();
+        }
+
+        private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
             GetServiceList();
         }
     }

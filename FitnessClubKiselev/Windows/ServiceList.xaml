@@ -26,6 +26,40 @@
                    FontSize="30"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"/>
+        <WrapPanel Grid.Row="1"
+                   VerticalAlignment="Center">
+            <TextBlock Text="Поиск:"
+                   FontSize="20"                   
+                   Margin="16 0 0 0"/>
+
+            <TextBox x:Name="TbSearch"
+                     FontSize="18"                   
+                     Margin="5 0 0 0"
+                     Width="300"
+                     Height="30"
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"
+                     TextChanged="TbSearch_TextChanged"
+                     />
+            <TextBlock Text="Критерий:"
+                   FontSize="20"                   
+                   Margin="30 0 0 0"/>
+            <ComboBox x:Name="CMBTypeSearch"
+                      HorizontalAlignment="Left"
+                      FontSize="16"
+                      Margin="5 0 0 0"
+                      Height="30"
+                      Width="200" 
+                      Background="#FFBCFFFF" 
+                      BorderBrush="{x:Null}"
+                      Foreground="#FF0D3F44"
+                      DisplayMemberPath="">
+                <TextBlock>По наименованию</TextBlock>
+                <TextBlock>По Цене</TextBlock>
+                <TextBlock>По Описанию</TextBlock>
+            </ComboBox>
+        </WrapPanel>
 
         <ListView x:Name="lvService"
                   Grid.Row="2"
