@@ -16,7 +16,7 @@
 ![image](https://user-images.githubusercontent.com/116631267/221531299-652958b9-058b-4442-bc2a-dbd5894179d6.png)
 
 <b>Список услуг</b>
-![image](https://user-images.githubusercontent.com/116631267/221531599-efa3a9d8-f369-4b28-8429-232380d7d785.png)
+![image](https://user-images.githubusercontent.com/116631267/222436747-d06a988b-0ba1-4f64-b6a2-46acf9fff58b.png)
 
 <b>Редактирование услуги</b>
 ![image](https://user-images.githubusercontent.com/116631267/221531773-53beb6e1-4984-4c24-a4da-7a443cd53777.png)
