@@ -18,6 +18,13 @@
 <b>Список услуг</b>
 ![image](https://user-images.githubusercontent.com/116631267/222436747-d06a988b-0ba1-4f64-b6a2-46acf9fff58b.png)
 
+<b>Поиск</b>
+![image](https://user-images.githubusercontent.com/116631267/222652617-b9a5316f-812f-4a29-a7a8-48656927985a.png)
+
+<b>Код поиска</b>
+![image](https://user-images.githubusercontent.com/116631267/222652756-7d54dd3a-1b43-49f7-9522-8d9b30b7384f.png)
+
+
 <b>Редактирование услуги</b>
 ![image](https://user-images.githubusercontent.com/116631267/221531773-53beb6e1-4984-4c24-a4da-7a443cd53777.png)
 
@@ -30,4 +37,4 @@
 <b>ADO NET</b>
 ![image](https://user-images.githubusercontent.com/116631267/218427642-6ef69f3f-c3ce-4441-902b-a22fb51b5418.png)
 ![image](https://user-images.githubusercontent.com/116631267/218427957-468ed379-ee75-4880-a794-1961322987a5.png)
-![image](https://user-images.githubusercontent.com/116631267/222651922-a9637cde-a0f9-4429-be25-220b4d77e12a.png)
+
