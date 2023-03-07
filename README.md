@@ -18,9 +18,6 @@
 <b>Список услуг</b>
 ![image](https://user-images.githubusercontent.com/116631267/223379199-443da9ec-2159-427b-9ccd-2e42f82bb39d.png)
 
-<b>Поиск</b>
-![image](https://user-images.githubusercontent.com/116631267/222652617-b9a5316f-812f-4a29-a7a8-48656927985a.png)
-
 <b>Код поиска</b>
 ![image](https://user-images.githubusercontent.com/116631267/222652756-7d54dd3a-1b43-49f7-9522-8d9b30b7384f.png)
 
