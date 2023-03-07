@@ -127,10 +127,9 @@ namespace FitnessClubKiselev.Windows
                 service.Price = Convert.ToDecimal(TbPrice.Text);
                 service.Duration = Convert.ToInt32(TbDuration.Text);
                 service.Description = TbDescription.Text;
-                if (pathImage != null)
-                {
+
                     editService.Photo = File.ReadAllBytes(pathImage);
-                }
+ 
 
                 EFClass.context.Service.Add(service);
                 EFClass.context.SaveChanges();

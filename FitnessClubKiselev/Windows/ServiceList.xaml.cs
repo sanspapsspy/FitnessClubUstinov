@@ -22,10 +22,22 @@ namespace FitnessClubKiselev.Windows
     /// </summary>
     public partial class ServiceList : Window
     {
+        List<string> SortList = new List<string>()
+        {
+                "По умолчанию",
+                "По названию (А-Я)",
+                "По названию (Я-А)",
+                "По Цене(Возрастание)",
+                "По Цене(Убывание)",
+                "По Описанию (А-Я)",
+                "По Описанию (Я-А)"
+
+        };
         public ServiceList()
         {
             InitializeComponent();
             GetServiceList();
+            CMBTypeSearch.ItemsSource = SortList;
             CMBTypeSearch.SelectedIndex = 0;
         }
 
@@ -35,17 +47,34 @@ namespace FitnessClubKiselev.Windows
 
             serviceList = EFClass.context.Service.ToList();
 
-            if (CMBTypeSearch.SelectedIndex == 0)
+            serviceList = serviceList.Where(z => z.NameService.ToString().Contains(TbSearch.Text.ToLower())).ToList();
+            
+            switch (CMBTypeSearch.SelectedIndex)
             {
-                serviceList = serviceList.Where(z => z.NameService.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
-            }
-            else if (CMBTypeSearch.SelectedIndex == 1)
-            {
-                serviceList = serviceList.Where(z => z.Price.ToString().Contains(TbSearch.Text)).ToList();
-            }
-            else if (CMBTypeSearch.SelectedIndex == 2)
-            {
-                serviceList = serviceList.Where(z => z.Description.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
+                case 0:
+                    serviceList = serviceList.OrderBy(z => z.Id).ToList();
+                    break;
+                case 1:
+                    serviceList = serviceList.OrderBy(z => z.NameService).ToList();
+                    break;
+                case 2:
+                    serviceList = serviceList.OrderByDescending(z => z.NameService).ToList();
+                    break;
+                case 3:
+                    serviceList = serviceList.OrderBy(z => z.Price).ToList();
+                    break;
+                case 4:
+                    serviceList = serviceList.OrderByDescending(z => z.Price).ToList();
+                    break;
+                case 5:
+                    serviceList = serviceList.OrderBy(z => z.Description).ToList();
+                    break;
+                case 6:
+                    serviceList = serviceList.OrderByDescending(z => z.Description).ToList();
+                    break;
+                default:
+                    serviceList = serviceList.OrderBy(i => i.Id).ToList();
+                    break;
             }
 
                 lvService.ItemsSource = serviceList;
@@ -84,6 +113,11 @@ namespace FitnessClubKiselev.Windows
         }
 
         private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            GetServiceList();
+        }
+
+        private void CMBTypeSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             GetServiceList();
         }

@@ -54,10 +54,7 @@
                       Background="#FFBCFFFF" 
                       BorderBrush="{x:Null}"
                       Foreground="#FF0D3F44"
-                      DisplayMemberPath="">
-                <TextBlock>По наименованию</TextBlock>
-                <TextBlock>По Цене</TextBlock>
-                <TextBlock>По Описанию</TextBlock>
+                      DisplayMemberPath="" SelectionChanged="CMBTypeSearch_SelectionChanged">
             </ComboBox>
         </WrapPanel>
 
