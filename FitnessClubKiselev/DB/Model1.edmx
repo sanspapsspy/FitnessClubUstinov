@@ -18,6 +18,7 @@
           <Property Name="PassportSeries" Type="char" MaxLength="4" />
           <Property Name="PassportNumber" Type="char" MaxLength="6" />
           <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhotoClient" Type="varbinary(max)" />
           <Property Name="IdGender" Type="int" Nullable="false" />
           <Property Name="IdUser" Type="int" />
         </EntityType>
@@ -200,6 +201,7 @@
           <Property Name="PassportSeries" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
           <Property Name="PassportNumber" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
           <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhotoClient" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="IdGender" Type="Int32" Nullable="false" />
           <Property Name="IdUser" Type="Int32" />
           <NavigationProperty Name="Gender" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_Client_Gender" FromRole="Client" ToRole="Gender" />
@@ -302,6 +304,7 @@
               <MappingFragment StoreEntitySet="Client">
                 <ScalarProperty Name="IdUser" ColumnName="IdUser" />
                 <ScalarProperty Name="IdGender" ColumnName="IdGender" />
+                <ScalarProperty Name="PhotoClient" ColumnName="PhotoClient" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
                 <ScalarProperty Name="PassportSeries" ColumnName="PassportSeries" />

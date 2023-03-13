@@ -47,7 +47,7 @@ namespace FitnessClubKiselev.Windows
 
             serviceList = EFClass.context.Service.ToList();
 
-            serviceList = serviceList.Where(z => z.NameService.ToString().Contains(TbSearch.Text.ToLower())).ToList();
+            serviceList = serviceList.Where(z => z.NameService.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
             
             switch (CMBTypeSearch.SelectedIndex)
             {

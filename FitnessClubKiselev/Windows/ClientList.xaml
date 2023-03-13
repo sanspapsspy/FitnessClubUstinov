@@ -1,0 +1,131 @@
+﻿<Window x:Class="FitnessClubKiselev.Windows.ClientList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessClubKiselev.Windows"
+        mc:Ignorable="d"
+        Title="ClientList" Height="800" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF9BFBC2" Offset="0"/>
+                <GradientStop Color="#FF3CD6C8" Offset="0.632"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Text="Список Клиентов"
+                   FontSize="30"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"/>
+        <WrapPanel Grid.Row="1"
+                   VerticalAlignment="Center">
+            <TextBlock Text="Поиск:"
+                   FontSize="20"                   
+                   Margin="16 0 0 0"/>
+
+            <TextBox x:Name="TbSearchClient"
+                     FontSize="18"                   
+                     Margin="5 0 0 0"
+                     Width="300"
+                     Height="30"
+                     Background="#FFBCFFFF" 
+                     BorderBrush="{x:Null}"
+                     Foreground="#FF0D3F44"
+                     TextChanged="TbSearchClient_TextChanged"
+                     />
+            <TextBlock Text="Критерий:"
+                   FontSize="20"                   
+                   Margin="30 0 0 0"/>
+            <ComboBox x:Name="CMBTypeSearchClient"
+                      HorizontalAlignment="Left"
+                      FontSize="16"
+                      Margin="5 0 0 0"
+                      Height="30"
+                      Width="200" 
+                      Background="#FFBCFFFF" 
+                      BorderBrush="{x:Null}"
+                      Foreground="#FF0D3F44"
+                      DisplayMemberPath="" SelectionChanged="CMBTypeSearchClient_SelectionChanged">
+            </ComboBox>
+        </WrapPanel>
+
+        <ListView x:Name="lvClient"
+                  Grid.Row="2"
+                  Margin="5" 
+                  d:ItemsSource="{d:SampleData ItemCount=5}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="DarkSlateGray"
+                            BorderThickness="1"
+                            Width="750"
+                            Height="200"
+                            Margin="8">
+                        <WrapPanel>
+                            <WrapPanel.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF9BFBC2" Offset="0"/>
+                                    <GradientStop Color="#FF3CD6C8" Offset="0.632"/>
+                                </LinearGradientBrush>
+                            </WrapPanel.Background>
+                            <Image x:Name="ClientImage"
+                                   Height="150"
+                                   Width="190"
+                                   Margin="10 0 0 0">
+                                <Image.Source>
+                                    <Binding Path="PhotoClient">
+                                        <Binding.TargetNullValue>
+                                            <ImageSource>/Res/user.png</ImageSource>
+                                        </Binding.TargetNullValue>
+                                    </Binding>
+                                </Image.Source>
+
+                            </Image>
+                            <StackPanel Margin="20 30 0 0"
+                                        Height="150">
+                                <TextBlock Text="{Binding LName}"
+                                       FontSize="18"
+                                       Margin="5 0 0 0"/>
+                                <TextBlock Text="{Binding FName}"
+                                       FontSize="18"
+                                       Margin="5 0 0 0"/>
+                                <TextBlock Text="{Binding Patronymic}"
+                                       FontSize="18"
+                                       Margin="5 0 0 0"/>
+                            </StackPanel>
+
+                            
+                        </WrapPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:Name="BtnAddClient"
+                Content="Добавить Клиента"
+                Grid.Row="3"
+                Width="250"
+                Height="40"
+                FontSize="20"
+                HorizontalAlignment="Right"
+                Margin="20 0"
+                Background="#FF60B9E2" 
+                BorderBrush="#FF2A6A67" 
+                Foreground="#FF0D3F44"
+                Click="BtnAddClient_Click"/>
+    </Grid>
+</Window>

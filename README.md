@@ -28,6 +28,9 @@
 <b>Добавление услуги</b>
 ![image](https://user-images.githubusercontent.com/116631267/222432842-34b0f581-c942-4053-9d70-23269cf683cd.png)
 
+<b>Список клиентов</b>
+![image](https://user-images.githubusercontent.com/116631267/224668990-77289e77-fff6-441b-9745-abd340262395.png)
+
 <b>БД</b>
 ![image](https://user-images.githubusercontent.com/116631267/221530907-59488756-6c61-41c5-927b-588b0cd3ba6f.png)
 

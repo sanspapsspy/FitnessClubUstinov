@@ -80,6 +80,7 @@ namespace FitnessClubKiselev.Windows
             // Добавление клиента
             Client client = new Client();
 
+            
             client.LName = TbLName.Text;
             client.FName = TbFName.Text;
             client.Patronymic = TbPatronymic.Text;
@@ -96,6 +97,11 @@ namespace FitnessClubKiselev.Windows
 
             // Закрытие окна
             this.Close();
+        }
+
+        private void TbLName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
