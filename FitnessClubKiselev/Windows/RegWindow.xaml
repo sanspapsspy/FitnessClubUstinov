@@ -25,10 +25,31 @@
                        Margin="0 20 0 0" 
                        FontWeight="DemiBold" 
                        Foreground="#FF0D3F44"/>
-            <TextBlock Text="Имя"
+                <Border BorderBrush="#FF0D3F44"
+                    BorderThickness="1"
+                    Width="200"
+                    Height="150"
+                    Margin="20 20 0 0"
+                    HorizontalAlignment="Left">
+                    <Image x:Name="ImgService" 
+                       Width="200"
+                       Height="150"/>
+                </Border>
+                <Button x:Name="BtnAddPhoto"
+                    Content="Изменить фото"
+                    HorizontalAlignment="Left"
+                    FontSize="16"
+                    Margin="20 5 0 0"
+                    Width="200" 
+                    Background="#FF60B9E2" 
+                    BorderBrush="#FF2A6A67" 
+                    Foreground="#FF0D3F44"
+                    Click="BtnAddPhoto_Click"/>
+
+                <TextBlock Text="Имя"
                        HorizontalAlignment="Left"
                        FontSize="16"
-                       Margin="20 50 0 0"
+                       Margin="20 20 0 0"
                        Foreground="#FF0D3F44"/>
             <TextBox x:Name="TbFName"
                      HorizontalAlignment="Left"
@@ -50,7 +71,7 @@
                      Width="200" 
                      Background="#FFBCFFFF" 
                      BorderBrush="{x:Null}"
-                     Foreground="#FF0D3F44"/>
+                     Foreground="#FF0D3F44" TextChanged="TbLName_TextChanged"/>
             <TextBlock Text="Отчество (необязательно)"
                        HorizontalAlignment="Left"
                        FontSize="16"

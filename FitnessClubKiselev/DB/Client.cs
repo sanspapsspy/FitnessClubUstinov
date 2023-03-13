@@ -23,6 +23,7 @@ namespace FitnessClubKiselev.DB
         public string PassportSeries { get; set; }
         public string PassportNumber { get; set; }
         public string Email { get; set; }
+        public byte[] PhotoClient { get; set; }
         public int IdGender { get; set; }
         public Nullable<int> IdUser { get; set; }
     

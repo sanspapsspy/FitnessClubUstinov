@@ -6,10 +6,10 @@
     <edmx:Diagrams>
       <Diagram DiagramId="ef879398d37d4059b6ee085d4bad77c7" Name="Diagram1">
         <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Client" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Gender" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Gender" Width="1.5" PointX="0.75" PointY="6.125" />
         <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Service" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" />
-        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.User" Width="1.5" PointX="0.75" PointY="5.875" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.User" Width="1.5" PointX="0.75" PointY="2" />
         <AssociationConnector Association="FitnessClubKiselyovAndTundeshevModel.FK_Client_Gender" />
         <AssociationConnector Association="FitnessClubKiselyovAndTundeshevModel.FK_Client_User" />
       </Diagram>
