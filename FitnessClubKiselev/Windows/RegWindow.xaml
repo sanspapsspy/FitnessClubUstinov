@@ -19,7 +19,8 @@
                 </LinearGradientBrush>
             </StackPanel.Background>
             
-            <TextBlock Text="Добавление клиента"
+            <TextBlock x:Name="TbTitleClient"
+                       Text="Добавление клиента"
                        HorizontalAlignment="Center"
                        FontSize="24"
                        Margin="0 20 0 0" 
@@ -31,11 +32,11 @@
                     Height="150"
                     Margin="20 20 0 0"
                     HorizontalAlignment="Left">
-                    <Image x:Name="ImgService" 
+                    <Image x:Name="ImgClient" 
                        Width="200"
                        Height="150"/>
                 </Border>
-                <Button x:Name="BtnAddPhoto"
+                <Button x:Name="BtnAddPhotoClient"
                     Content="Изменить фото"
                     HorizontalAlignment="Left"
                     FontSize="16"
@@ -43,8 +44,8 @@
                     Width="200" 
                     Background="#FF60B9E2" 
                     BorderBrush="#FF2A6A67" 
-                    Foreground="#FF0D3F44"
-                    Click="BtnAddPhoto_Click"/>
+                    Foreground="#FF0D3F44" Click="BtnAddPhotoClient_Click"
+                    />
 
                 <TextBlock Text="Имя"
                        HorizontalAlignment="Left"

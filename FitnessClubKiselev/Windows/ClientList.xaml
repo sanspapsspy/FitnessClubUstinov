@@ -96,7 +96,8 @@
 
                             </Image>
                             <StackPanel Margin="20 30 0 0"
-                                        Height="150">
+                                        Height="150"
+                                        Width="300">
                                 <TextBlock Text="{Binding LName}"
                                        FontSize="18"
                                        Margin="5 0 0 0"/>
@@ -107,8 +108,18 @@
                                        FontSize="18"
                                        Margin="5 0 0 0"/>
                             </StackPanel>
+                            <Button x:Name="BtnEditClient"
+                                    Content="Изменить"
+                                    Width="150"
+                                    Height="30"
+                                    FontSize="20"
+                                    HorizontalAlignment="Right"
+                                    Margin="50 150 0 0"
+                                    Background="#FF60B9E2" 
+                                    BorderBrush="#FF2A6A67" 
+                                    Foreground="#FF0D3F44"
+                                    Click="BtnEditClient_Click"/>
 
-                            
                         </WrapPanel>
                     </Border>
                 </DataTemplate>
