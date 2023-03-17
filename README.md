@@ -14,7 +14,10 @@
 ![image](https://user-images.githubusercontent.com/116631267/224953017-5dd2d9e7-e6a1-4890-a339-e3defc7ca840.png)
 
 <b>Список услуг</b>
-![image](https://user-images.githubusercontent.com/116631267/223379199-443da9ec-2159-427b-9ccd-2e42f82bb39d.png)
+![image](https://user-images.githubusercontent.com/116631267/225892583-043c552a-76d6-41d0-ab53-c76deef97b23.png)
+
+<b>Корзина</b>
+![image](https://user-images.githubusercontent.com/116631267/225892770-4c0e86a0-f846-42e4-96c1-fd2521654d9f.png)
 
 <b>Код поиска</b>
 ![image](https://user-images.githubusercontent.com/116631267/222652756-7d54dd3a-1b43-49f7-9522-8d9b30b7384f.png)
