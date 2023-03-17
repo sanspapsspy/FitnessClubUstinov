@@ -121,5 +121,25 @@ namespace FitnessClubKiselev.Windows
         {
             GetServiceList();
         }
+
+        private void BtnCartAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+
+            var service = button.DataContext as Service;
+
+            CartClass.serviceCart.Add(service);
+            MessageBox.Show($"Услуга {service.NameService} добавлена");
+        }
+
+        private void BtnCart_Click(object sender, RoutedEventArgs e)
+        {
+            CartWindow cartWindow = new CartWindow();
+            cartWindow.ShowDialog();
+        }
     }
 }
