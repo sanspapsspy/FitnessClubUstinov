@@ -1,0 +1,60 @@
+﻿<Window x:Class="FitnessClubKiselev.Windows.BuyWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessClubKiselev.Windows"
+        mc:Ignorable="d"
+        Title="BuyWindow" Height="400" Width="250">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF9BFBC2" Offset="0"/>
+                <GradientStop Color="#FF3CD6C8" Offset="0.632"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock 
+             Text="Заказ"
+             FontSize="18"
+             FontWeight="Bold"
+             HorizontalAlignment="Center" 
+             FontFamily="Comic Sans MS"/>
+        <ListView x:Name="lvBuy" 
+                 Height="300"
+                 Grid.Row="1"
+                 d:ItemsSource="{d:SampleData ItemCount=8}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding NameService}"
+                               FontSize="16"
+                               Margin="5 0 0 0"/>
+                        <TextBlock Text="{Binding Price}"
+                                   FontSize="16"
+                                   Margin="5 0 0 0"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <Button Grid.Row="2"
+                Content="Купить"
+                Height="25"
+                Width="100"
+                HorizontalAlignment="Right"
+                Margin="10"
+                Background="#FF60B9E2" 
+                BorderBrush="#FF2A6A67" 
+                Foreground="#FF0D3F44"></Button>
+    </Grid>
+</Window>
