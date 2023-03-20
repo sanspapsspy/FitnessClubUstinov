@@ -19,6 +19,9 @@
 <b>Корзина</b>
 ![image](https://user-images.githubusercontent.com/116631267/225892770-4c0e86a0-f846-42e4-96c1-fd2521654d9f.png)
 
+<b>Покупка</b>
+![image](https://user-images.githubusercontent.com/116631267/226309696-3e20fb93-9689-4eb1-9994-e2268b36771b.png)
+
 <b>Код поиска</b>
 ![image](https://user-images.githubusercontent.com/116631267/222652756-7d54dd3a-1b43-49f7-9522-8d9b30b7384f.png)
 
@@ -35,7 +38,7 @@
 ![image](https://user-images.githubusercontent.com/116631267/224952532-d2b6e017-8f9c-4d7f-aa1c-fa23562287e2.png)
 
 <b>БД</b>
-![image](https://user-images.githubusercontent.com/116631267/221530907-59488756-6c61-41c5-927b-588b0cd3ba6f.png)
+![image](https://user-images.githubusercontent.com/116631267/226309450-010be9fd-2919-41bd-9bda-c5b8f6cf51ef.png)
 
 <b>ADO NET</b>
 ![image](https://user-images.githubusercontent.com/116631267/218427642-6ef69f3f-c3ce-4441-902b-a22fb51b5418.png)
