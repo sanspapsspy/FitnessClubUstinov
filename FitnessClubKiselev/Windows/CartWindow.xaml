@@ -25,7 +25,8 @@
         <TextBlock Text="Корзина"
                    FontSize="30"
                    FontWeight="Bold"
-                   HorizontalAlignment="Center"/>
+                   HorizontalAlignment="Center"
+                   />
 
         <ListView x:Name="lvServiceCart"
                   Grid.Row="2"
@@ -89,7 +90,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
         <Button x:Name="BtnBuy"
                 Content="Купить"
                 Grid.Row="3"
@@ -97,10 +97,28 @@
                 Height="40"
                 FontSize="20"
                 HorizontalAlignment="Right"
-                Margin="20 0"
+                Margin="20 0 20 0"
                 Background="#FF60B9E2" 
                 BorderBrush="#FF2A6A67" 
                 Foreground="#FF0D3F44"
                 Click="BtnBuy_Click"/>
+        <TextBlock 
+             Text="Сумма:"
+             FontSize="18"
+             FontWeight="Bold"
+             HorizontalAlignment="Left"
+            Grid.Row="3"
+            Margin="20 0 20 0"
+            VerticalAlignment="Center"
+            />
+        <TextBlock 
+             Text="0"
+             FontSize="18"
+             FontWeight="Bold"
+             HorizontalAlignment="Left"
+            Grid.Row="3" 
+            VerticalAlignment="Center"
+            Margin="90 0 0 0"
+            />
     </Grid>
 </Window>

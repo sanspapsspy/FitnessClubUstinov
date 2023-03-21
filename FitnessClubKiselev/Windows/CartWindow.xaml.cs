@@ -41,8 +41,7 @@ namespace FitnessClubKiselev.Windows
 
         private void BtnBuy_Click(object sender, RoutedEventArgs e)
         {
-            BuyWindow buyWindow = new BuyWindow();
-            buyWindow.ShowDialog();
+
         }
     }
 }
