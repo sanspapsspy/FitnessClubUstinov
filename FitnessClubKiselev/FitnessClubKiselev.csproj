@@ -105,9 +105,6 @@
     <Compile Include="Windows\AddEditServiceWindow.xaml.cs">
       <DependentUpon>AddEditServiceWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\BuyWindow.xaml.cs">
-      <DependentUpon>BuyWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\CartWindow.xaml.cs">
       <DependentUpon>CartWindow.xaml</DependentUpon>
     </Compile>
@@ -165,10 +162,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AuthWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\BuyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
