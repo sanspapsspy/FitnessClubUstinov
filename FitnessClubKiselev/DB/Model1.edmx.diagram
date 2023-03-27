@@ -5,13 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ef879398d37d4059b6ee085d4bad77c7" Name="Diagram1">
-        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Client" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Gender" Width="1.5" PointX="0.75" PointY="6.125" />
-        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Service" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" />
-        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.User" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Client" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Employer" Width="1.5" PointX="5.25" PointY="6" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Gender" Width="1.5" PointX="3" PointY="6.125" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Order" Width="1.5" PointX="7.5" PointY="1.75" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.OrderEmployer" Width="1.5" PointX="9.75" PointY="2" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Role" Width="1.5" PointX="0.75" PointY="2.125" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.Service" Width="1.5" PointX="7.5" PointY="5.75" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="FitnessClubKiselyovAndTundeshevModel.User" Width="1.5" PointX="3" PointY="1.875" />
         <AssociationConnector Association="FitnessClubKiselyovAndTundeshevModel.FK_Client_Gender" />
         <AssociationConnector Association="FitnessClubKiselyovAndTundeshevModel.FK_Client_User" />
+        <AssociationConnector Association="FitnessClubKiselyovAndTundeshevModel.FK_Order_Client" />
+        <AssociationConnector Association="FitnessClubKiselyovAndTundeshevModel.FK_Order_Employer" />
+        <AssociationConnector Association="FitnessClubKiselyovAndTundeshevModel.FK_OrderEmployer_Order" />
+        <AssociationConnector Association="FitnessClubKiselyovAndTundeshevModel.FK_OrderEmployer_Service" />
+        <AssociationConnector Association="FitnessClubKiselyovAndTundeshevModel.FK_User_Role" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

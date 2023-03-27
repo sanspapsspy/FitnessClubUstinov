@@ -23,6 +23,8 @@ namespace FitnessClubKiselev
         public MainWindow()
         {
             InitializeComponent();
+            TxtNameUser.Text = "Логин: " + ClassHelper.UserClass.AuthUser.Login;
+            TxtRole.Text = "Роль: " + ClassHelper.UserClass.AuthUser.Role.NameRole;
         }
     }
 }

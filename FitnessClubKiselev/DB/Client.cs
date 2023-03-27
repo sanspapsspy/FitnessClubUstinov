@@ -14,6 +14,12 @@ namespace FitnessClubKiselev.DB
     
     public partial class Client
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Client()
+        {
+            this.Order = new HashSet<Order>();
+        }
+    
         public int Id { get; set; }
         public string LName { get; set; }
         public string FName { get; set; }
@@ -29,5 +35,7 @@ namespace FitnessClubKiselev.DB
     
         public virtual Gender Gender { get; set; }
         public virtual User User { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

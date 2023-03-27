@@ -28,7 +28,11 @@ namespace FitnessClubKiselev.DB
         }
     
         public virtual DbSet<Client> Client { get; set; }
+        public virtual DbSet<Employer> Employer { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<OrderEmployer> OrderEmployer { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }

@@ -7,6 +7,23 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF9BFBC2" Offset="0"/>
+                <GradientStop Color="#FF3CD6C8" Offset="0.632"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel>
+            <TextBlock x:Name="TxtNameUser"
+                   Text="Логин: "
+                   HorizontalAlignment="Right"
+                   Margin="16"
+                   FontSize="18"/>
+            <TextBlock x:Name="TxtRole"
+                   Text="Пользователь: "
+                   HorizontalAlignment="Right"
+                   Margin="16"
+                   FontSize="18"/>
+        </StackPanel>
     </Grid>
 </Window>

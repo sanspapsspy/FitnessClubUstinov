@@ -22,12 +22,46 @@
           <Property Name="IdGender" Type="int" Nullable="false" />
           <Property Name="IdUser" Type="int" />
         </EntityType>
+        <EntityType Name="Employer">
+          <Key>
+            <PropertyRef Name="IdEmployer" />
+          </Key>
+          <Property Name="IdEmployer" Type="int" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Gender">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="NameGender" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="IdOrder" />
+          </Key>
+          <Property Name="IdOrder" Type="int" Nullable="false" />
+          <Property Name="IdClient" Type="int" Nullable="false" />
+          <Property Name="IdEmployer" Type="int" Nullable="false" />
+          <Property Name="DateSell" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderEmployer">
+          <Key>
+            <PropertyRef Name="IdOrder" />
+            <PropertyRef Name="IdService" />
+          </Key>
+          <Property Name="IdOrder" Type="int" Nullable="false" />
+          <Property Name="IdService" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="int" Nullable="false" />
+          <Property Name="NameRole" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -57,6 +91,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Login" Type="nvarchar" MaxLength="80" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="IdRole" Type="int" />
         </EntityType>
         <Association Name="FK_Client_Gender">
           <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
@@ -79,6 +114,66 @@
             </Principal>
             <Dependent Role="Client">
               <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Employer">
+          <End Role="Employer" Type="Self.Employer" Multiplicity="1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employer">
+              <PropertyRef Name="IdEmployer" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdEmployer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderEmployer_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="1" />
+          <End Role="OrderEmployer" Type="Self.OrderEmployer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="IdOrder" />
+            </Principal>
+            <Dependent Role="OrderEmployer">
+              <PropertyRef Name="IdOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderEmployer_Service">
+          <End Role="Service" Type="Self.Service" Multiplicity="1" />
+          <End Role="OrderEmployer" Type="Self.OrderEmployer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderEmployer">
+              <PropertyRef Name="IdService" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="IdRole" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdRole" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -115,7 +210,11 @@
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="Хранилище FitnessClubKiselyovAndTundeshevModelContainer">
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employer" EntityType="Self.Employer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderEmployer" EntityType="Self.OrderEmployer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
@@ -126,6 +225,26 @@
           <AssociationSet Name="FK_Client_User" Association="Self.FK_Client_User">
             <End Role="User" EntitySet="User" />
             <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Client" Association="Self.FK_Order_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Employer" Association="Self.FK_Order_Employer">
+            <End Role="Employer" EntitySet="Employer" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderEmployer_Order" Association="Self.FK_OrderEmployer_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderEmployer" EntitySet="OrderEmployer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderEmployer_Service" Association="Self.FK_OrderEmployer_Service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="OrderEmployer" EntitySet="OrderEmployer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -164,7 +283,11 @@
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
           <EntitySet Name="Client" EntityType="FitnessClubKiselyovAndTundeshevModel.Client" />
+          <EntitySet Name="Employer" EntityType="FitnessClubKiselyovAndTundeshevModel.Employer" />
           <EntitySet Name="Gender" EntityType="FitnessClubKiselyovAndTundeshevModel.Gender" />
+          <EntitySet Name="Order" EntityType="FitnessClubKiselyovAndTundeshevModel.Order" />
+          <EntitySet Name="OrderEmployer" EntityType="FitnessClubKiselyovAndTundeshevModel.OrderEmployer" />
+          <EntitySet Name="Role" EntityType="FitnessClubKiselyovAndTundeshevModel.Role" />
           <EntitySet Name="Service" EntityType="FitnessClubKiselyovAndTundeshevModel.Service" />
           <EntitySet Name="sysdiagrams" EntityType="FitnessClubKiselyovAndTundeshevModel.sysdiagrams" />
           <EntitySet Name="User" EntityType="FitnessClubKiselyovAndTundeshevModel.User" />
@@ -175,6 +298,26 @@
           <AssociationSet Name="FK_Client_User" Association="FitnessClubKiselyovAndTundeshevModel.FK_Client_User">
             <End Role="User" EntitySet="User" />
             <End Role="Client" EntitySet="Client" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Client" Association="FitnessClubKiselyovAndTundeshevModel.FK_Order_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Employer" Association="FitnessClubKiselyovAndTundeshevModel.FK_Order_Employer">
+            <End Role="Employer" EntitySet="Employer" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderEmployer_Order" Association="FitnessClubKiselyovAndTundeshevModel.FK_OrderEmployer_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="OrderEmployer" EntitySet="OrderEmployer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderEmployer_Service" Association="FitnessClubKiselyovAndTundeshevModel.FK_OrderEmployer_Service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="OrderEmployer" EntitySet="OrderEmployer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="FitnessClubKiselyovAndTundeshevModel.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
           </AssociationSet>
           </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -206,6 +349,17 @@
           <Property Name="IdUser" Type="Int32" />
           <NavigationProperty Name="Gender" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_Client_Gender" FromRole="Client" ToRole="Gender" />
           <NavigationProperty Name="User" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_Client_User" FromRole="Client" ToRole="User" />
+          <NavigationProperty Name="Order" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_Order_Client" FromRole="Client" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Employer">
+          <Key>
+            <PropertyRef Name="IdEmployer" />
+          </Key>
+          <Property Name="IdEmployer" Type="Int32" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Order" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_Order_Employer" FromRole="Employer" ToRole="Order" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -214,6 +368,37 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="NameGender" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Client" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_Client_Gender" FromRole="Gender" ToRole="Client" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="IdOrder" />
+          </Key>
+          <Property Name="IdOrder" Type="Int32" Nullable="false" />
+          <Property Name="IdClient" Type="Int32" Nullable="false" />
+          <Property Name="IdEmployer" Type="Int32" Nullable="false" />
+          <Property Name="DateSell" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Client" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_Order_Client" FromRole="Order" ToRole="Client" />
+          <NavigationProperty Name="Employer" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_Order_Employer" FromRole="Order" ToRole="Employer" />
+          <NavigationProperty Name="OrderEmployer" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_OrderEmployer_Order" FromRole="Order" ToRole="OrderEmployer" />
+        </EntityType>
+        <EntityType Name="OrderEmployer">
+          <Key>
+            <PropertyRef Name="IdOrder" />
+            <PropertyRef Name="IdService" />
+          </Key>
+          <Property Name="IdOrder" Type="Int32" Nullable="false" />
+          <Property Name="IdService" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_OrderEmployer_Order" FromRole="OrderEmployer" ToRole="Order" />
+          <NavigationProperty Name="Service" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_OrderEmployer_Service" FromRole="OrderEmployer" ToRole="Service" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="IdRole" />
+          </Key>
+          <Property Name="IdRole" Type="Int32" Nullable="false" />
+          <Property Name="NameRole" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_User_Role" FromRole="Role" ToRole="User" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -225,6 +410,7 @@
           <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="OrderEmployer" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_OrderEmployer_Service" FromRole="Service" ToRole="OrderEmployer" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -243,7 +429,9 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Login" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="IdRole" Type="Int32" />
           <NavigationProperty Name="Client" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_Client_User" FromRole="User" ToRole="Client" />
+          <NavigationProperty Name="Role" Relationship="FitnessClubKiselyovAndTundeshevModel.FK_User_Role" FromRole="User" ToRole="Role" />
         </EntityType>
         <Association Name="FK_Client_Gender">
           <End Type="FitnessClubKiselyovAndTundeshevModel.Gender" Role="Gender" Multiplicity="1" />
@@ -266,6 +454,66 @@
             </Principal>
             <Dependent Role="Client">
               <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Client">
+          <End Type="FitnessClubKiselyovAndTundeshevModel.Client" Role="Client" Multiplicity="1" />
+          <End Type="FitnessClubKiselyovAndTundeshevModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Employer">
+          <End Type="FitnessClubKiselyovAndTundeshevModel.Employer" Role="Employer" Multiplicity="1" />
+          <End Type="FitnessClubKiselyovAndTundeshevModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employer">
+              <PropertyRef Name="IdEmployer" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="IdEmployer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderEmployer_Order">
+          <End Type="FitnessClubKiselyovAndTundeshevModel.Order" Role="Order" Multiplicity="1" />
+          <End Type="FitnessClubKiselyovAndTundeshevModel.OrderEmployer" Role="OrderEmployer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="IdOrder" />
+            </Principal>
+            <Dependent Role="OrderEmployer">
+              <PropertyRef Name="IdOrder" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderEmployer_Service">
+          <End Type="FitnessClubKiselyovAndTundeshevModel.Service" Role="Service" Multiplicity="1" />
+          <End Type="FitnessClubKiselyovAndTundeshevModel.OrderEmployer" Role="OrderEmployer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrderEmployer">
+              <PropertyRef Name="IdService" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Type="FitnessClubKiselyovAndTundeshevModel.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="FitnessClubKiselyovAndTundeshevModel.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="IdRole" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="IdRole" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -317,11 +565,48 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Employer">
+            <EntityTypeMapping TypeName="FitnessClubKiselyovAndTundeshevModel.Employer">
+              <MappingFragment StoreEntitySet="Employer">
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="IdEmployer" ColumnName="IdEmployer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Gender">
             <EntityTypeMapping TypeName="FitnessClubKiselyovAndTundeshevModel.Gender">
               <MappingFragment StoreEntitySet="Gender">
                 <ScalarProperty Name="NameGender" ColumnName="NameGender" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="FitnessClubKiselyovAndTundeshevModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="DateSell" ColumnName="DateSell" />
+                <ScalarProperty Name="IdEmployer" ColumnName="IdEmployer" />
+                <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+                <ScalarProperty Name="IdOrder" ColumnName="IdOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderEmployer">
+            <EntityTypeMapping TypeName="FitnessClubKiselyovAndTundeshevModel.OrderEmployer">
+              <MappingFragment StoreEntitySet="OrderEmployer">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="IdService" ColumnName="IdService" />
+                <ScalarProperty Name="IdOrder" ColumnName="IdOrder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="FitnessClubKiselyovAndTundeshevModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="NameRole" ColumnName="NameRole" />
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -351,6 +636,7 @@
           <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="FitnessClubKiselyovAndTundeshevModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="IdRole" ColumnName="IdRole" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
