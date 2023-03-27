@@ -7,6 +7,7 @@
 
 <b>Вывод логина и роли после авторизации</b>
 ![image](https://user-images.githubusercontent.com/116631267/227908858-85a111a5-c500-4d15-a97b-739d6781a4b7.png)
+![image](https://user-images.githubusercontent.com/116631267/227909072-278aface-eaf8-4ae4-9409-4c6b41de267a.png)
 
 <b>Дизайн авторизации:</b>
 ![image](https://user-images.githubusercontent.com/116631267/218426872-49d81e90-f1ad-4034-8f33-3076d0cfb1b9.png)
