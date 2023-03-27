@@ -35,6 +35,10 @@ namespace FitnessClubKiselev.Windows
 
             if(authUser != null)
             {
+                // Сохраняем пользователя
+                ClassHelper.UserClass.AuthUser = authUser;
+
+                // Переход в главное окно
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 Close();

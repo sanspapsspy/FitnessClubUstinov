@@ -12,22 +12,18 @@ namespace FitnessClubKiselev.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Service
+    public partial class Role
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Service()
+        public Role()
         {
-            this.OrderEmployer = new HashSet<OrderEmployer>();
+            this.User = new HashSet<User>();
         }
     
-        public int Id { get; set; }
-        public string NameService { get; set; }
-        public Nullable<int> Duration { get; set; }
-        public decimal Price { get; set; }
-        public byte[] Photo { get; set; }
-        public string Description { get; set; }
+        public int IdRole { get; set; }
+        public string NameRole { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderEmployer> OrderEmployer { get; set; }
+        public virtual ICollection<User> User { get; set; }
     }
 }
