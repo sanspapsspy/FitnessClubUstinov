@@ -5,6 +5,8 @@
 <b>Структура:</b>
 ![image](https://user-images.githubusercontent.com/116631267/221530731-1a6907ea-fcc4-4dcc-94de-50499d33987b.png)
 
+<b>Вывод логина и роли после авторизации</b>
+![image](https://user-images.githubusercontent.com/116631267/227908858-85a111a5-c500-4d15-a97b-739d6781a4b7.png)
 
 <b>Дизайн авторизации:</b>
 ![image](https://user-images.githubusercontent.com/116631267/218426872-49d81e90-f1ad-4034-8f33-3076d0cfb1b9.png)
@@ -38,7 +40,7 @@
 ![image](https://user-images.githubusercontent.com/116631267/224952532-d2b6e017-8f9c-4d7f-aa1c-fa23562287e2.png)
 
 <b>БД</b>
-![image](https://user-images.githubusercontent.com/116631267/226309450-010be9fd-2919-41bd-9bda-c5b8f6cf51ef.png)
+![image](https://user-images.githubusercontent.com/116631267/227908400-22ae14c2-d35b-4417-b446-46dee87db9f5.png)
 
 <b>ADO NET</b>
 ![image](https://user-images.githubusercontent.com/116631267/218427642-6ef69f3f-c3ce-4441-902b-a22fb51b5418.png)
