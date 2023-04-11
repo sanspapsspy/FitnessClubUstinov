@@ -22,6 +22,15 @@ namespace FitnessClubKiselev.Windows
         public AdminMainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void btnCheckLists_Click(object sender, RoutedEventArgs e)
+        {
+            ListsWindow list = new ListsWindow();
+            list.Show();
+            
+            
         }
     }
 }

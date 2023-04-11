@@ -134,6 +134,9 @@
     <Compile Include="Windows\DirectorMainWindow.xaml.cs">
       <DependentUpon>DirectorMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ListsWindow.xaml.cs">
+      <DependentUpon>ListsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\RegWindow.xaml.cs">
       <DependentUpon>RegWindow.xaml</DependentUpon>
     </Compile>
@@ -143,46 +146,6 @@
     <Compile Include="Windows\ServiceList.xaml.cs">
       <DependentUpon>ServiceList.xaml</DependentUpon>
     </Compile>
-    <Page Include="Pages\AdministratorsPages\ListOfClientsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\AdministratorsPages\ListOfCoachesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\AdministratorsPages\ListOfServicesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\AdministratorsPages\SalesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DirectorsPages\ListOfClientsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DirectorsPages\ListOfCoachesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DirectorsPages\ListOfEmployeesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DirectorsPages\ListOfServicesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DirectorsPages\ReportsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\DirectorsPages\SalesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Windows\AddEditServiceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,6 +174,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\ListsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -218,36 +185,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Pages\AdministratorsPages\ListOfClientsPage.xaml.cs">
-      <DependentUpon>ListOfClientsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AdministratorsPages\ListOfCoachesPage.xaml.cs">
-      <DependentUpon>ListOfCoachesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AdministratorsPages\ListOfServicesPage.xaml.cs">
-      <DependentUpon>ListOfServicesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\AdministratorsPages\SalesPage.xaml.cs">
-      <DependentUpon>SalesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DirectorsPages\ListOfClientsPage.xaml.cs">
-      <DependentUpon>ListOfClientsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DirectorsPages\ListOfCoachesPage.xaml.cs">
-      <DependentUpon>ListOfCoachesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DirectorsPages\ListOfEmployeesPage.xaml.cs">
-      <DependentUpon>ListOfEmployeesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DirectorsPages\ListOfServicesPage.xaml.cs">
-      <DependentUpon>ListOfServicesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DirectorsPages\ReportsPage.xaml.cs">
-      <DependentUpon>ReportsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\DirectorsPages\SalesPage.xaml.cs">
-      <DependentUpon>SalesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
@@ -304,7 +241,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\CommonPages\" />
+    <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -320,6 +257,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Res\client.png" />
+    <Resource Include="Res\employeer.png" />
     <Resource Include="Res\report.png" />
     <Resource Include="Res\management.png" />
     <Resource Include="Res\sales.png" />
