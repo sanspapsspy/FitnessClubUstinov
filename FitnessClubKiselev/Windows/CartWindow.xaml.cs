@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FitnessClubKiselev.ClassHelper;
+using FitnessClubKiselev.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +26,7 @@ namespace FitnessClubKiselev.Windows
             InitializeComponent();
             lvServiceCart.ItemsSource = ClassHelper.CartClass.serviceCart.ToList();
         }
+        
 
         private void BtnDeleteCart_Click(object sender, RoutedEventArgs e)
         {
@@ -32,7 +35,6 @@ namespace FitnessClubKiselev.Windows
             {
                 return;
             }
-
             var service = button.DataContext as DB.Service;
             ClassHelper.CartClass.serviceCart.Remove(service);
             lvServiceCart.ItemsSource = ClassHelper.CartClass.serviceCart.ToList();
