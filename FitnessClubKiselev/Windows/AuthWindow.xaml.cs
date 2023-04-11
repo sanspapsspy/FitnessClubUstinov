@@ -38,11 +38,37 @@ namespace FitnessClubKiselev.Windows
                 // Сохраняем пользователя
                 ClassHelper.UserClass.AuthUser = authUser;
 
-                // Переход в главное окно
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                Close();
+                // Переход в окно MainWindow (IdRole == 1 - клиент)
+                if (authUser.IdRole == 1)
+                {
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Close();
+                }
+                // Переход в окно Тренера (IdRole == 2 - Тренер)
+                else if (authUser.IdRole == 2) 
+                {
+                    CoachMainWindow coachMainWindow = new CoachMainWindow();
+                    coachMainWindow.Show();
+                    Close();
+                }
+                // Переход в окно Админа (IdRole == 3 - Администратор)
+                else if (authUser.IdRole == 3)
+                {
+                    AdminMainWindow adminMainWindow = new AdminMainWindow();
+                    adminMainWindow.Show();
+                    Close();
+                }
+                // Переход в окно Директора (IdRole == 4 - Директор)
+                else if (authUser.IdRole == 4)
+                {
+                    DirectorMainWindow directorMainWindow = new DirectorMainWindow();
+                    directorMainWindow.Show();
+                    Close();
+                }
+                
             }
+            // Если пароль или логин введены неправильно, то выдаст соответствующее сообщение
             else
             {
                 MessageBox.Show("Неравильно введён логин или пароль");

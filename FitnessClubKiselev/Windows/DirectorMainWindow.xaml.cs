@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FitnessClubKiselev.Pages.DirectorsPages
+namespace FitnessClubKiselev.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для ReportsPage.xaml
+    /// Логика взаимодействия для DirectorMainWindow.xaml
     /// </summary>
-    public partial class ReportsPage : Page
+    public partial class DirectorMainWindow : Window
     {
-        public ReportsPage()
+        public DirectorMainWindow()
         {
             InitializeComponent();
         }

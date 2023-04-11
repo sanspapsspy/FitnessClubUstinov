@@ -10,19 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FitnessClubKiselev.Pages.DirectorsPages
+namespace FitnessClubKiselev.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для ListOfEmployeesPage.xaml
+    /// Логика взаимодействия для AdminMainWindow.xaml
     /// </summary>
-    public partial class ListOfEmployeesPage : Page
+    public partial class AdminMainWindow : Window
     {
-        public ListOfEmployeesPage()
+        public AdminMainWindow()
         {
             InitializeComponent();
+            
+        }
+
+        private void btnCheckLists_Click(object sender, RoutedEventArgs e)
+        {
+            ListsWindow list = new ListsWindow();
+            list.Show();
+            
+            
         }
     }
 }

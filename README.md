@@ -13,6 +13,18 @@
 ![image](https://user-images.githubusercontent.com/116631267/218426872-49d81e90-f1ad-4034-8f33-3076d0cfb1b9.png)
 ![image](https://user-images.githubusercontent.com/116631267/221531134-a167af19-a54c-4871-a263-eddc8605dd74.png)
 
+<b>Главное окно тренера</b>
+![image](https://user-images.githubusercontent.com/116631267/231175650-6224a40a-124e-49aa-bc6c-c9117a65ac66.png)
+
+<b>Главное окно администратора</b>
+![image](https://user-images.githubusercontent.com/116631267/231176042-58cd88cc-c925-4bec-ab36-6c5f8f3fe502.png)
+
+<b>Выбор списка(для администратора)</b>
+![image](https://user-images.githubusercontent.com/116631267/231176205-63107f61-726a-40a6-a63d-ae3f82fbd7fa.png)
+
+<b>Главное окно директора</b>
+![image](https://user-images.githubusercontent.com/116631267/231176365-d0779f55-3f2f-4a99-8027-b7ce0ea64557.png)
+
 <b>Добавление клиента:</b>
 ![image](https://user-images.githubusercontent.com/116631267/224953017-5dd2d9e7-e6a1-4890-a339-e3defc7ca840.png)
 

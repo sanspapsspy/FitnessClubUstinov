@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FitnessClubKiselev.Pages.DirectorsPages
+namespace FitnessClubKiselev.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для ListOfServicesPage.xaml
+    /// Логика взаимодействия для CoachMainWindow.xaml
     /// </summary>
-    public partial class ListOfServicesPage : Page
+    public partial class CoachMainWindow : Window
     {
-        public ListOfServicesPage()
+        public CoachMainWindow()
         {
             InitializeComponent();
         }
